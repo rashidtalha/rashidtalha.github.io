@@ -1,2 +1,4 @@
-# rashidtalha.github.io
-Personal website
+Rashid Talha - Personal Website
+===============================
+
+Personal website: [rashidtalha.github.io](https://rashidtalha.github.io)
