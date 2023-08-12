@@ -1,0 +1,311 @@
+/* ==== EXTERNAL FONTS ==== */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: light;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* ==== GLOBAL STYLES ==== */
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #222528;
+  line-height: 1.5;
+  font-size: 12pt;
+}
+
+body {
+  background-color: #f2f3f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-style: normal;
+}
+
+a {
+  color: #0064a7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0d1321;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+code {
+  display: inline-block;
+  font-family: Consolas,"courier new";
+  color: black;
+  background-color: #dbdbdb;
+  padding: 0px 6px;
+  font-size: 95%;
+}
+
+pre {
+  font-family: Consolas,"courier new";
+  color: black;
+  background-color: #dbdbdb;
+  padding: 3px 5px;
+  font-size: 95%;
+}
+
+/* ==== NAVIGATION BAR ==== */
+nav {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0d1321;
+  color: #f2f3f4;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 11pt;
+}
+
+.navbar-brand-box {
+  min-width: 100%;
+  min-height: 52px;
+  order: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  order: 1;
+  color: #f2f3f4;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+  color: #f2f3f4;
+}
+
+.navbar-toggle {
+  order: 2;
+  width: 45px;
+  height: 35px;
+  color: #f2f3f4;
+  font-weight: 500;
+  background-color: transparent;
+  color: #f2f3f4;
+  border: 1px solid #f2f3f4;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 0 5px 0;
+}
+
+.navbar-toggle:hover {
+  color: #0064a7;
+  border-color: #0064a7;
+}
+
+/* This is a JS helper class, the normal collapsing functionality
+occurs in CSS using min-width triggers. */
+.navbar-toggle-hide {display: none;}
+
+.navbar-toggle-icon {font-size: 16px;}
+
+.navbar-entries {
+  order: 2;
+  min-width: 100%;
+  height: 0vh;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-top: 0;
+  transition: all 399ms ease;
+  overflow: hidden;
+}
+
+.navbar-item {
+  display: none;
+  color: #f2f3f4;
+  text-decoration: none;
+  padding-bottom: 12px;
+}
+
+.navbar-item:hover {
+  text-decoration: none;
+  color: #f2f3f4;
+}
+
+.navbar-uncollapse {height: 100vh; padding-top: 20px;}
+.navbar-unhide {display: block;}
+
+@media screen and (min-width: 660px) {
+  nav {flex-flow: row;}
+  .navbar-brand-box {min-width: 0%;}
+  .navbar-toggle {display: none;}
+  .navbar-entries {
+    min-width: 0%;
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding-top: 0;
+    display: flex;
+  }
+  .navbar-item {
+    padding-bottom: 0;
+    padding-left: 20px;
+    display: block;
+  }
+}
+
+/* ==== OTHER STUFF ==== */
+main {
+  padding-top: 80px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.intro-box {
+  margin-top: 2.5em;
+}
+
+.intro-heading {
+  display: block;
+  margin-top: 1.5em;
+  margin-bottom: 0.2em;
+  font-size: 24pt;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.intro-pic {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 6px;
+  transition: width 399ms ease;
+}
+
+.intro-icon-container {
+  display: block;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  font-size: 15pt;
+}
+
+.intro-icon-container i {
+  margin-right: 7px;
+}
+
+@media screen and (min-width: 660px) {
+  .intro-box {
+    margin-top: 3em;
+  }
+
+  .intro-heading {
+    margin-top: 0.1em;
+  }
+
+  .intro-pic {
+    display: inline-block;
+    float: right;
+    width: 250px;
+    margin: 0 0.5em 0.5em 1.5em;
+  }
+}
+
+.gen-heading {
+  display: block;
+  margin-top: 0.7em;
+  margin-bottom: 0.2em;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 10pt;
+  text-align: center;
+}
