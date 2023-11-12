@@ -306,9 +306,18 @@ main {
   }
 }
 
-.gen-heading {
+.h1 {
   display: block;
-  margin-top: 0.7em;
+  margin-top: 1.0em;
+  margin-bottom: 0.2em;
+  font-size: 24pt;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.h3 {
+  display: block;
+  margin-top: 0.9em;
   margin-bottom: 0.2em;
   font-size: 1.3rem;
   font-weight: 500;
