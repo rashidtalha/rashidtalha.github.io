@@ -6,6 +6,9 @@ opts = {
 };
 
 window.onload = function() {
+    document.getElementById("viewing").innerHTML = "Complete the setup first ...";
+    document.getElementById("guessing").innerHTML = "Complete the setup first ...";
+
     listbox = document.getElementById('fcat')
     for (j in opts) {
         const option = new Option(j, j);
@@ -17,13 +20,11 @@ form = document.getElementById('stage-1');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    document.getElementById("viewing").innerHTML = "Complete the setup.";
-    document.getElementById("guessing").innerHTML = "<button onclick='genGuessing()'>Ready to Guess</button>";
-    
     const nameField = form.elements['fname'];
     const categoryField = form.elements['fcat'];
 
     names_orig = nameField.value.split(", ");
+    if (names_orig.length < 3) { alert("Enter at least 3 names!"); return };
 
     names = nameField.value.split(", ");
     shuffleArray(names);
@@ -36,7 +37,8 @@ form.addEventListener('submit', (event) => {
 
     sub = foods.slice(0,5);
     shuffleArray(sub);
-    
+
+    document.getElementById("guessing").innerHTML = "<span class='vspace'></span><button onclick='genGuessing()'>Ready to Guess?</button>";
     genViewing();
 });
 
@@ -50,16 +52,14 @@ function shuffleArray(array) {
 }
 
 function genViewing() {
-    msg = "";
+    msg = "<span class='vspace'></span>";
     for (i in names_orig) {
         cls = '"btn' + i + '"'
-        if (names_orig[i] == imposter) {
-            msg = msg + "<p>" + names_orig[i] + ": <button id='btn" + i + "' onclick='showHide(false,"+ cls +")'>SHOW</button>" + "</p>";
-        } else {
-            msg = msg + "<p>" + names_orig[i] + ": <button id='btn" + i + "' onclick='showHide(true,"+ cls +")'>SHOW</button>" + "</p>";
-        };
+        if (names_orig[i] == imposter) { mark = false } else { mark = true };
+        msg = msg + "<button id='btn" + i + "' onclick='showHide("+mark+","+ cls +")'>" + names_orig[i] +" (Click to Show)</button>";
+        msg += "<span class='vspace'></span>"
     }
-    msg += "<button id='truthbox' onclick='revealTruth()'>Who was out of the loop?</button>"
+    msg += "<br><br><button id='truthbox' onclick='revealTruth()'>Who was out of the loop?</button>"
     document.getElementById("viewing").innerHTML = msg;
 }
 
@@ -78,12 +78,10 @@ function showHide(val,cls) {
     } else {
         document.getElementById(cls).innerHTML = wrong + " (Click to hide)";
     };
-    document.getElementById(cls).onclick = function() { hideMe(cls); };
-}
-
-function hideMe(cls) {
-    document.getElementById(cls).innerHTML = "---- 0_0 ----";
-    document.getElementById(cls).disabled = true;
+    document.getElementById(cls).onclick = function() {
+        document.getElementById(cls).innerHTML = "---- ( 0_0 ) ----";
+        document.getElementById(cls).disabled = true;
+    };
 }
 
 function revealTruth() {

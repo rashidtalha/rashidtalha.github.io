@@ -21,8 +21,58 @@
   <link rel="stylesheet" type="text/css" href="assets/fa/css/solid.min.css">
 
   <style type="text/css">
+    main { max-width: 600px; }
     .frow { flex-direction: column; }
-    @media screen and (min-width: 960px) { .frow {flex-direction: row; } }
+    .vspace {display: block; margin-bottom: 10px}
+    .form-group { margin-bottom: 20px; }
+
+    .inner, form {
+      margin: 20px auto;
+      margin-bottom: 0px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+    }
+
+    input:focus, select:focus {
+      border-color: #6200ea;
+      box-shadow: 0px 2px 6px rgba(98, 0, 234, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: #1e4d2b;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #006b3c; }
+    button:disabled { background: #ccc; color: #777; }
   </style>
 </head>
 <body>
@@ -56,27 +106,42 @@
 
   <div class="frow">
     <div class="fcell">
-      <h3>Setup.</h3>
+
       <form id="stage-1">
-        <label for="fname">Names:</label><br>
-        <input type="text" id="fname" name="fname" placeholder="Person 1, Person 2, Person 3"><br>
-        <label for="fcat">Choose a category:</label><br>
-        <select id="fcat" name="fcat"></select><br>
-        <input type="submit" value="Generate">
+        <div class="form-group">
+          <h3>Setup.</h3>
+        </div>
+
+        <div class="form-group">
+            <label for="fname">Names:</label>
+            <input type="text" id="fname" name="fname" placeholder="Person 1, Person 2, Person 3" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="fcat">Select a category:</label>
+            <select id="fcat" name="fcat" required></select>
+        </div>
+        
+        <button type="submit">Submit</button>
       </form>
+
     </div>
 
     <div class="fcell">
-      <h3>View.</h3>
-      <div id="viewing">
-        Complete the setup.
+      <div class="inner">
+        <h3>View.</h3>
+        <div id="viewing">
+          Complete the setup.
+        </div>
       </div>
     </div>
 
     <div class="fcell">
-      <h3>Guess.</h3>
-      <div id="guessing">
-        <button onclick="genGuessing()">Ready to Guess</button>
+      <div class="inner">
+        <h3>Guess.</h3>
+        <div id="guessing">
+          <button onclick="genGuessing()">Ready to Guess</button>
+        </div>
       </div>
     </div>
 
