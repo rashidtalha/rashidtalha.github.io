@@ -1,11 +1,19 @@
-const opts = { 
+opts = { 
     "Food":["Pizza", "Burger", "Pasta", "Sushi", "Tacos", "Sandwich", "Salad", "Fried Chicken", "Steak", "Ramen", "Sushi Rolls", "Hot Dog", "Ice Cream", "Chocolate", "Apple", "Banana", "Orange", "Grapes", "Strawberries", "Mango", "Carrot", "Potato", "Tomato", "Lettuce", "Cucumber", "Spinach", "Broccoli", "Onion", "Garlic", "Peas", "Corn", "Rice", "Bread", "Bagel", "Croissant", "Donut", "Pancakes", "Waffles", "Cereal", "Oatmeal", "Cheese", "Yogurt", "Milk", "Butter", "Eggs", "Chicken Breast", "Beef", "Lamb", "Fish", "Shrimp"],
     "Locations":["United States", "Canada", "Mexico", "Brazil", "Argentina", "United Kingdom", "Germany", "France", "Italy", "Spain", "Australia", "New Zealand", "China", "India", "Japan", "South Korea", "Russia", "South Africa", "Egypt", "Nigeria", "Kenya", "Morocco", "Saudi Arabia", "United Arab Emirates", "Qatar", "India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Thailand", "Vietnam", "Malaysia", "Singapore", "Indonesia", "Philippines", "Israel", "Turkey", "Greece", "Sweden", "Norway", "Finland", "Denmark", "Poland", "Netherlands", "Belgium", "Switzerland", "Austria", "Czech Republic", "Portugal", "Chile", "Colombia", "Peru", "Venezuela", "Bolivia"],
     "Classrooms": ["302", "303", "304", "305", "402", "MS Room", "computer lab", "301"],
     "Animals":["Dog", "Cat", "Elephant", "Lion", "Tiger", "Giraffe", "Zebra", "Horse", "Kangaroo", "Panda", "Bear", "Wolf", "Fox", "Rabbit", "Squirrel", "Monkey", "Gorilla", "Chimpanzee", "Koala", "Sloth", "Cheetah", "Leopard", "Jaguar", "Otter", "Raccoon", "Penguin", "Flamingo", "Peacock", "Eagle", "Owl", "Hawk", "Parrot", "Crow", "Bat", "Shark", "Whale", "Dolphin", "Octopus", "Seal", "Turtle", "Crocodile", "Alligator", "Snake", "Frog", "Lizard", "Tortoise", "Horse", "Camel", "Bison", "Buffalo"],
 };
 
-const form = document.getElementById('stage-1');
+window.onload = function() {
+    listbox = document.getElementById('fcat')
+    for (j in opts) {
+        const option = new Option(j, j);
+        listbox.add(option, undefined);
+    }
+};
+
+form = document.getElementById('stage-1');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -28,13 +36,7 @@ form.addEventListener('submit', (event) => {
 
     sub = foods.slice(0,5);
     shuffleArray(sub);
-
-    console.log(names_orig);
-    console.log(imposter);
-    console.log(correct);
-    console.log(wrong);
-    console.log(sub);
-
+    
     genViewing();
 });
 
