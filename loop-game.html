@@ -6,10 +6,10 @@
   <meta lang="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Project | Tehreer</title>
+  <title>Project | Out of the Loop</title>
   <meta name="author" content="Rashid Talha">
   <!-- <meta name="description" content=""> -->
-  <meta name="keywords" content="rashid, talha, rmathsphys, maths, physics, project, tehreer, urdu">
+  <meta name="keywords" content="rashid, talha, rmathsphys, maths, physics, game, out of the loop">
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
@@ -21,22 +21,8 @@
   <link rel="stylesheet" type="text/css" href="assets/fa/css/solid.min.css">
 
   <style type="text/css">
-    textarea {
-      resize: none;
-      overflow: auto;
-      width: 100%;
-      height: 400px;
-      font-size: 18pt;
-    }
-    .txt-ur {
-      font-family: Jameel Noori Nastaleeq, Times New Roman;
-      direction: rtl;
-    }  
-    .txt-en {
-      font-family: Times New Roman;
-      font-size: 14pt;
-      direction: ltr;
-    }
+    .frow { flex-direction: column; }
+    @media screen and (min-width: 960px) { .frow {flex-direction: row; } }
   </style>
 </head>
 <body>
@@ -54,6 +40,7 @@
 
   <div class="navbar-entries navbar-collapse">
     <a href="https://rashidtalha.github.io/projects.html" title="Projects" class="navbar-item navbar-hide">Projects</a>
+    <a href="https://rashidtalha.github.io/loop-game.html" title="Out of the Loop" class="navbar-item navbar-hide">Game</a>
   </div>
 
 </nav>
@@ -73,7 +60,7 @@
       <form id="stage-1">
         <label for="fname">Names:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Person 1, Person 2, Person 3"><br>
-        <label for="fcat">Choose a car:</label><br>
+        <label for="fcat">Choose a category:</label><br>
         <select id="fcat" name="fcat">
           <option value="Food">Food</option>
           <option value="Animals">Animals</option>
