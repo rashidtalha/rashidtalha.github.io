@@ -1,7 +1,7 @@
 const opts = { 
-    // "Food":["Dog","Cat","Cow","Horse","Pig","Sheep","Goat","Rabbit","Deer","Bear","Lion","Tiger","Elephant","Giraffe","Zebra","Monkey","Gorilla","Kangaroo","Panda","Wolf","Fox","Dolphin","Whale","Bat","Squirrel","Raccoon","Hedgehog","Camel","Hippopotamus","Rhinoceros","Chicken","Duck","Goose","Turkey","Pigeon","Sparrow","Eagle","Hawk","Owl","Parrot","Penguin","Flamingo","Swan","Peacock","Crow","Robin","Seagull","Ostrich","Falcon","Woodpecker","Snake","Lizard","Turtle","Tortoise","Alligator","Crocodile","Gecko","Iguana","Chameleon","Komodo Dragon","Frog","Toad","Salamander","Newt","Axolotl","Goldfish","Salmon","Tuna","Shark","Clownfish","Angelfish","Catfish","Swordfish","Stingray","Seahorse","Ant","Bee","Butterfly","Moth","Dragonfly","Ladybug","Grasshopper","Cricket","Mosquito","Fly","Beetle","Spider","Scorpion","Wasp","Caterpillar","Jellyfish","Starfish","Octopus","Squid","Crab","Lobster","Shrimp","Snail","Worm"],
+    "Food":["Pizza", "Burger", "Pasta", "Sushi", "Tacos", "Sandwich", "Salad", "Fried Chicken", "Steak", "Ramen", "Sushi Rolls", "Hot Dog", "Ice Cream", "Chocolate", "Apple", "Banana", "Orange", "Grapes", "Strawberries", "Mango", "Carrot", "Potato", "Tomato", "Lettuce", "Cucumber", "Spinach", "Broccoli", "Onion", "Garlic", "Peas", "Corn", "Rice", "Bread", "Bagel", "Croissant", "Donut", "Pancakes", "Waffles", "Cereal", "Oatmeal", "Cheese", "Yogurt", "Milk", "Butter", "Eggs", "Chicken Breast", "Beef", "Lamb", "Fish", "Shrimp"],
     "Locations":["United States", "Canada", "Mexico", "Brazil", "Argentina", "United Kingdom", "Germany", "France", "Italy", "Spain", "Australia", "New Zealand", "China", "India", "Japan", "South Korea", "Russia", "South Africa", "Egypt", "Nigeria", "Kenya", "Morocco", "Saudi Arabia", "United Arab Emirates", "Qatar", "India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Thailand", "Vietnam", "Malaysia", "Singapore", "Indonesia", "Philippines", "Israel", "Turkey", "Greece", "Sweden", "Norway", "Finland", "Denmark", "Poland", "Netherlands", "Belgium", "Switzerland", "Austria", "Czech Republic", "Portugal", "Chile", "Colombia", "Peru", "Venezuela", "Bolivia"],
-    "Animals":["Dog","Cat","Cow","Horse","Pig","Sheep","Goat","Rabbit","Deer","Bear","Lion","Tiger","Elephant","Giraffe","Zebra","Monkey","Gorilla","Kangaroo","Panda","Wolf","Fox","Dolphin","Whale","Bat","Squirrel","Raccoon","Hedgehog","Camel","Hippopotamus","Rhinoceros","Chicken","Duck","Goose","Turkey","Pigeon","Sparrow","Eagle","Hawk","Owl","Parrot","Penguin","Flamingo","Swan","Peacock","Crow","Robin","Seagull","Ostrich","Falcon","Woodpecker","Snake","Lizard","Turtle","Tortoise","Alligator","Crocodile","Gecko","Iguana","Chameleon","Komodo Dragon","Frog","Toad","Salamander","Newt","Axolotl","Goldfish","Salmon","Tuna","Shark","Clownfish","Angelfish","Catfish","Swordfish","Stingray","Seahorse","Ant","Bee","Butterfly","Moth","Dragonfly","Ladybug","Grasshopper","Cricket","Mosquito","Fly","Beetle","Spider","Scorpion","Wasp","Caterpillar","Jellyfish","Starfish","Octopus","Squid","Crab","Lobster","Shrimp","Snail","Worm"],
+    "Animals":["Dog", "Cat", "Elephant", "Lion", "Tiger", "Giraffe", "Zebra", "Horse", "Kangaroo", "Panda", "Bear", "Wolf", "Fox", "Rabbit", "Squirrel", "Monkey", "Gorilla", "Chimpanzee", "Koala", "Sloth", "Cheetah", "Leopard", "Jaguar", "Otter", "Raccoon", "Penguin", "Flamingo", "Peacock", "Eagle", "Owl", "Hawk", "Parrot", "Crow", "Bat", "Shark", "Whale", "Dolphin", "Octopus", "Seal", "Turtle", "Crocodile", "Alligator", "Snake", "Frog", "Lizard", "Tortoise", "Horse", "Camel", "Bison", "Buffalo"],
 };
 
 const form = document.getElementById('stage-1');
@@ -56,6 +56,7 @@ function genViewing() {
             msg = msg + "<p>" + names_orig[i] + ": <button id='btn" + i + "' onclick='showHide(true,"+ cls +")'>SHOW</button>" + "</p>";
         };
     }
+    msg += "<button id='truthbox' onclick='revealTruth()'>Who was out of the loop?</button>"
     document.getElementById("viewing").innerHTML = msg;
 }
 
@@ -80,4 +81,9 @@ function showHide(val,cls) {
 function hideMe(cls) {
     document.getElementById(cls).innerHTML = "---- 0_0 ----";
     document.getElementById(cls).disabled = true;
+}
+
+function revealTruth() {
+    document.getElementById("truthbox").innerHTML = imposter;
+    document.getElementById("truthbox").disabled = true;
 }
