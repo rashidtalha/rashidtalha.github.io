@@ -4,8 +4,8 @@ opts = {
     "Countries" : ["United States", "Canada", "Mexico", "Brazil", "Argentina", "United Kingdom", "Germany", "France", "Italy", "Spain", "Australia", "New Zealand", "China", "India", "Japan", "South Korea", "Russia", "South Africa", "Egypt", "Nigeria", "Kenya", "Morocco", "Saudi Arabia", "United Arab Emirates", "Qatar", "India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Thailand", "Vietnam", "Malaysia", "Singapore", "Indonesia", "Philippines", "Israel", "Turkey", "Greece", "Sweden", "Norway", "Finland", "Denmark", "Poland", "Netherlands", "Belgium", "Switzerland", "Austria", "Czech Republic", "Portugal", "Chile", "Colombia", "Pakistan", "Venezuela"],
     "Household Items" : ["Table", "Chair", "Sofa", "Bed", "Pillow", "Blanket", "Mattress", "Wardrobe", "Drawer", "Shelf", "Cupboard", "Mirror", "Clock", "Lamp", "Fan", "Air Conditioner", "Heater", "Refrigerator", "Microwave", "Oven", "Toaster", "Blender", "Kettle", "Stove", "Dishwasher", "Washing Machine", "Iron", "Vibrator", "Vacuum Cleaner", "Broom", "Mop", "Bucket", "Dustpan", "Trash Can", "Tissue Box", "Soap Dispenser", "Toilet Paper", "Shampoo Bottle", "Towel", "Toothbrush", "Comb", "Hairdryer", "Scissors", "Knife", "Spoon", "Fork", "Plate", "Bowl", "Cup", "Glass", "Water Bottle", "Jug", "Saucepan", "Frying Pan", "Door Mat", "Curtains", "Cushion", "Remote Control"],
     "SNS Rooms" : ["302", "303", "304", "305", "402", "MS Room", "Computer Lab", "301"],
-    "NUST People" : ["Azka", "Aroob", "Aasiya", "Zeenia", "Mudassir", "Hasan", "Abdullah", "Zaurayz", "Rashid", "Sana", "Afifa", "Mustafa", "Ahmad Hasan", "Usman Shakeel", "Zulfiqar", "Nazia", "Muhammad Ali", "Ehtisham", "Mehtab", "Nizalia", "Hamza Najam"],
-    "SNS Teachers" : ["Dr Meraj", "Dr Asif", "Dr Tooba", "Dr Rizwan", "Dr Ishaq", "Dr Tahir", "Dr Firdos", "Dr Fahad", "Dr Matloob", "Dr Mubashir", "Dr Ahmad Javid", "Dr Tajamul", "Dr Ilyas", "Dr Tufail", "Dr Ali Paracha", "Dr Rashid", "Dr Mujeeb", "Miss Kubra", "Dr Adnan", "Chaudry Sahib", "Zubair Sahib"],
+    "NUST People" : ["Rashid", "Azka", "Aroob", "Aasiya", "Zeenia", "Mudassir", "Hasan", "Abdullah", "Zaurayz", "Sana", "Afifa"],
+    "SNS Teachers" : ["Dr Meraj", "Dr Asif", "Dr Tooba", "Dr Rizwan", "Dr Ishaq", "Dr Tahir", "Dr Firdos", "Dr Fahad", "Dr Matloob", "Dr Mubashir", "Dr Ahmad Javid", "Dr Tajamul", "Dr Ilyas", "Dr Tufail", "Dr Ali Paracha", "Dr Rashid", "Dr Mujeeb", "Miss Kubra", "Dr Adnan", "Chaudry Sahib"],
 };
 
 window.onload = function() {
@@ -42,13 +42,24 @@ form.addEventListener('submit', (event) => {
     genViewing();
 });
 
+// function shuffleArray(array) {
+//     for (var i = array.length - 1; i >= 0; i--) {
+//         var j = Math.floor(Math.random() * (i + 1));
+//         var temp = array[i];
+//         array[i] = array[j];
+//         array[j] = temp;
+//     }
+// }
+
 function shuffleArray(array) {
-    for (var i = array.length - 1; i >= 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+  var m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
 }
 
 function genViewing() {
