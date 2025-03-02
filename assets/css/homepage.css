@@ -1,0 +1,60 @@
+/* ==== HOMEPAGE SPECIFIC ==== */
+.intro-box {
+  flex-direction: column;
+}
+
+.intro-side a {
+  text-decoration: none;
+}
+
+.intro-side img {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 6px;
+  transition: width 399ms ease;
+  padding-bottom: 20px;
+}
+
+.intro-side span {
+  text-align: center;
+  display: block;
+  margin-bottom: 1em;
+}
+
+.intro-side svg {
+  fill: currentColor;
+  width: 30px;
+}
+
+@media screen and (min-width: 800px) {
+  .intro-box {
+    flex-direction: row;
+  }
+
+  .intro-side {
+    flex: 0 0 250px;
+    padding-right: 40px;
+  }
+
+  .intro-side img {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  /*.intro-box {
+    flex-direction: row;
+  }*/
+
+  .intro-side {
+    flex: 0 0 350px;
+    padding-right: 40px;
+  }
+
+  /*.intro-side img {
+    width: 100%;
+    margin-top: 10px;
+  }*/
+}

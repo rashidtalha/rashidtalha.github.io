@@ -95,22 +95,63 @@
   font-display: swap;
 }
 
+/* ==== GLOBAL VARIABLES ==== */
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+/*USAGE:*/
+/*  background-color: var(--blue);*/
+
 /* ==== GLOBAL STYLES ==== */
 html {
   font-family: 'Roboto', sans-serif;
   color: #222528;
   line-height: 1.5;
-  font-size: 12pt;
+  font-size: 14pt;
 }
 
 body {
   background-color: #f2f3f4;
 }
 
+/* ==== TYPOGRAPHY ==== */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-style: normal;
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-bottom: 0.2em;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -144,6 +185,20 @@ pre {
   font-size: 95%;
 }
 
+/* ==== LAYOUT RELATED ==== */
+main {
+  padding-top: 100px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 10pt;
+  text-align: center;
+}
+
 /* ==== NAVIGATION BAR ==== */
 nav {
   display: flex;
@@ -156,54 +211,25 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  font-size: 11pt;
+  font-size: 13pt;
 }
 
-.navbar-brand-box {
+.navbar-box {
+  order: 1;
   min-width: 100%;
   min-height: 52px;
-  order: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
-}
-
-.navbar-brand {
-  order: 1;
-  color: #f2f3f4;
-  font-size: 14pt;
-  font-weight: 500;
-}
-
-.navbar-brand:hover {
-  text-decoration: none;
-  color: #f2f3f4;
+  justify-content: space-between;
 }
 
 .navbar-toggle {
-  order: 2;
-  width: 45px;
   height: 35px;
-  color: #f2f3f4;
-  font-weight: 500;
-  background-color: transparent;
-  color: #f2f3f4;
-  border: 1px solid #f2f3f4;
-  border-radius: 4px;
+  fill: currentColor;
   cursor: pointer;
-  padding: 5px 0 5px 0;
+  order:9;
 }
-
-.navbar-toggle:hover {
-  color: #0064a7;
-  border-color: #0064a7;
-}
-
-/* This is a JS helper class, the normal collapsing functionality
-occurs in CSS using min-width triggers. */
-.navbar-toggle-hide {display: none;}
-
-.navbar-toggle-icon {font-size: 16px;}
 
 .navbar-entries {
   order: 2;
@@ -212,7 +238,9 @@ occurs in CSS using min-width triggers. */
   display: flex;
   flex-flow: column nowrap;
   padding-top: 0;
-  transition: all 399ms ease;
+  transition-property: height, padding, display;
+  transition-duration: 399ms;
+  transition-timing-function: ease;
   overflow: hidden;
 }
 
@@ -223,18 +251,22 @@ occurs in CSS using min-width triggers. */
   padding-bottom: 12px;
 }
 
-.navbar-item:hover {
+.navbar-toggle:hover, .navbar-item:hover {
+  color: #0064a7;
+  fill: currentColor;
   text-decoration: none;
-  color: #f2f3f4;
+  transition: color 0.3s ease, fill 0.3s ease;
 }
 
+/* This is a JS helper class, the normal collapsing functionality occurs in CSS using min-width triggers. */
+.navbar-toggle-hide {display: none;}
 .navbar-uncollapse {height: 100vh; padding-top: 20px;}
 .navbar-unhide {display: block;}
 
 @media screen and (min-width: 660px) {
-  nav {flex-flow: row;}
-  .navbar-brand-box {min-width: 0%;}
-  .navbar-toggle {display: none;}
+  nav { flex-flow: row; }
+  .navbar-box { min-width: 0%; }
+  .navbar-toggle { display: none; }
   .navbar-entries {
     min-width: 0%;
     height: auto;
@@ -245,88 +277,7 @@ occurs in CSS using min-width triggers. */
   }
   .navbar-item {
     padding-bottom: 0;
-    padding-left: 20px;
+    padding-left: 18px;
     display: block;
   }
-}
-
-/* ==== OTHER STUFF ==== */
-main {
-  padding-top: 80px;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-.intro-box {
-  margin-top: 2.5em;
-}
-
-.intro-heading {
-  display: block;
-  margin-top: 1.5em;
-  margin-bottom: 0.2em;
-  font-size: 24pt;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.intro-pic {
-  display: block;
-  width: 300px;
-  margin: 0 auto;
-  border-radius: 6px;
-  transition: width 399ms ease;
-}
-
-.intro-icon-container {
-  display: block;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-  font-size: 15pt;
-}
-
-.intro-icon-container i {
-  margin-right: 7px;
-}
-
-@media screen and (min-width: 660px) {
-  .intro-box {
-    margin-top: 3em;
-  }
-
-  .intro-heading {
-    margin-top: 0.1em;
-  }
-
-  .intro-pic {
-    display: inline-block;
-    float: right;
-    width: 250px;
-    margin: 0 0.5em 0.5em 1.5em;
-  }
-}
-
-.h1 {
-  display: block;
-  margin-top: 1.0em;
-  margin-bottom: 0.2em;
-  font-size: 24pt;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.h3 {
-  display: block;
-  margin-top: 0.9em;
-  margin-bottom: 0.2em;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-
-/* ==== FOOTER ==== */
-footer {
-  padding-top: 40px;
-  padding-bottom: 20px;
-  font-size: 10pt;
-  text-align: center;
 }

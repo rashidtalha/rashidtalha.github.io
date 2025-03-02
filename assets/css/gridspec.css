@@ -31,27 +31,25 @@ body {
 .frow {
   display: flex;
   justify-content: space-between;
-  margin: 0 -0.5em;
 }
 
 .fcell {
   flex: 1;
-  margin: 0 0.5em;
   margin-bottom: 1em;
 }
 
 /* ==== FLEX GRID (MEDIUM SCREENS) ==== */
 @media screen and (min-width: 660px) {
   .container {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 }
 
 /* ==== FLEX GRID (LARGE SCREENS) ==== */
 @media screen and (min-width: 960px) {
   .container {
-    padding-left: 19%;
-    padding-right: 19%;
+    padding-left: 12%;
+    padding-right: 12%;
   }
 }
