@@ -1,5 +1,7 @@
 main { max-width: 600px; }
 p {margin-bottom: 0;}
+.vspace {display: block; margin-bottom: 10px}
+
 .frow { flex-direction: column; }
 .form-group { margin-bottom: 20px; }
 
