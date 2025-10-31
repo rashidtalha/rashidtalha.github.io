@@ -108,7 +108,7 @@
 html {
   font-family: 'Roboto', sans-serif;
   color: #222528;
-  line-height: 1.5;
+  line-height: 1.55;
   font-size: 14pt;
 }
 
@@ -139,7 +139,6 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: normal;
-  margin-bottom: 10px;
   margin-bottom: 0.2em;
 }
 
@@ -252,7 +251,7 @@ nav {
 }
 
 .navbar-toggle:hover, .navbar-item:hover {
-  color: #0064a7;
+  color: #74c7ff;
   fill: currentColor;
   text-decoration: none;
   transition: color 0.3s ease, fill 0.3s ease;
