@@ -186,7 +186,7 @@ pre {
 
 /* ==== LAYOUT RELATED ==== */
 main {
-  padding-top: 100px;
+  padding-top: 40px;
   margin: 0 auto;
   max-width: 1300px;
 }
@@ -201,82 +201,35 @@ footer {
 /* ==== NAVIGATION BAR ==== */
 nav {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  column-gap: 20px;
+}
+
+.navbar-container {
   background-color: #0d1321;
   color: #f2f3f4;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   font-size: 13pt;
 }
 
-.navbar-box {
-  order: 1;
-  min-width: 100%;
-  min-height: 52px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-toggle {
-  height: 35px;
-  fill: currentColor;
-  cursor: pointer;
-  order:9;
-}
-
-.navbar-entries {
-  order: 2;
-  min-width: 100%;
-  height: 0vh;
-  display: flex;
-  flex-flow: column nowrap;
-  padding-top: 0;
-  transition-property: height, padding, display;
-  transition-duration: 399ms;
-  transition-timing-function: ease;
-  overflow: hidden;
-}
-
 .navbar-item {
-  display: none;
+  display: block;
   color: #f2f3f4;
   text-decoration: none;
-  padding-bottom: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 0%;
 }
 
-.navbar-toggle:hover, .navbar-item:hover {
+.navbar-item:hover {
   color: #74c7ff;
   fill: currentColor;
   text-decoration: none;
   transition: color 0.3s ease, fill 0.3s ease;
-}
-
-/* This is a JS helper class, the normal collapsing functionality occurs in CSS using min-width triggers. */
-.navbar-toggle-hide {display: none;}
-.navbar-uncollapse {height: 100vh; padding-top: 20px;}
-.navbar-unhide {display: block;}
-
-@media screen and (min-width: 660px) {
-  nav { flex-flow: row; }
-  .navbar-box { min-width: 0%; }
-  .navbar-toggle { display: none; }
-  .navbar-entries {
-    min-width: 0%;
-    height: auto;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    padding-top: 0;
-    display: flex;
-  }
-  .navbar-item {
-    padding-bottom: 0;
-    padding-left: 18px;
-    display: block;
-  }
 }
