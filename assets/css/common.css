@@ -1,151 +1,58 @@
-/* ==== EXTERNAL FONTS ==== */
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Light.ttf") format("truetype");
-  font-weight: light;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-LightItalic.ttf") format("truetype");
-  font-weight: light;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-ThinItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* ==== GLOBAL VARIABLES ==== */
 :root {
-  --blue: #1e90ff;
-  --white: #ffffff;
-}
+  --bg-color: #f2f3f4;
+  --text-color: #222528;
 
-/*USAGE:*/
-/*  background-color: var(--blue);*/
+  --a-color: #0064a7;
+  --a-hv-color: #0d1321;
+
+  --nav-bg-color: #0d1321;
+  --nav-text-color: #f2f3f4;
+  --nav-hv-color: #74c7ff;
+
+  --code-bg-color: #dbdbdb;
+}
 
 /* ==== GLOBAL STYLES ==== */
 html {
   font-family: 'Roboto', sans-serif;
-  color: #222528;
-  line-height: 1.55;
-  font-size: 14pt;
+  color: var(--text-color);
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 body {
-  background-color: #f2f3f4;
+  background-color: var(--bg-color);
 }
 
 /* ==== TYPOGRAPHY ==== */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4{
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   font-style: normal;
-  display: block;
 }
 
 h1 {
   font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 0.2em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
   font-size: 1.75rem;
-  font-weight: normal;
-  margin-bottom: 0.2em;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: 1.5rem;
-  font-weight: normal;
-  margin-bottom: 0.2em;
+  font-weight: 400; /* normal */
 }
 
 h4 {
   font-size: 1.05rem;
-  font-weight: bold;
-  margin-bottom: 0.2em;
+  font-weight: 500;
 }
 
 p {
@@ -154,12 +61,12 @@ p {
 }
 
 a {
-  color: #0064a7;
+  color: var(--a-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: #0d1321;
+  color: var(--a-hv-color);
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-color: currentColor;
@@ -167,21 +74,16 @@ a:hover {
   text-underline-offset: 0.2em;
 }
 
-code {
-  display: inline-block;
-  font-family: Consolas,"courier new";
-  color: black;
-  background-color: #dbdbdb;
-  padding: 0px 6px;
-  font-size: 95%;
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
-pre {
-  font-family: Consolas,"courier new";
-  color: black;
-  background-color: #dbdbdb;
-  padding: 3px 5px;
-  font-size: 95%;
+code {
+  font-family: Consolas, 'Courier New', monospace;
+  background-color: var(--code-bg-color);
+  padding: 0.15em 0.3em;
+  font-size: 0.95em;
 }
 
 /* ==== LAYOUT RELATED ==== */
@@ -194,7 +96,7 @@ main {
 footer {
   padding-top: 40px;
   padding-bottom: 20px;
-  font-size: 10pt;
+  font-size: 0.8rem;
   text-align: center;
 }
 
@@ -213,23 +115,35 @@ nav {
 }
 
 .navbar-container {
-  background-color: #0d1321;
-  color: #f2f3f4;
-  font-size: 13pt;
+  background-color: var(--nav-bg-color);
+  font-size: 0.95rem;
 }
 
 .navbar-item {
   display: block;
-  color: #f2f3f4;
+  color: var(--nav-text-color);
   text-decoration: none;
   margin-top: 5px;
   margin-bottom: 5px;
-  min-width: 0%;
+  transition: color 0.3s ease, fill 0.3s ease;
 }
 
 .navbar-item:hover {
-  color: #74c7ff;
+  color: var(--nav-hv-color);
   fill: currentColor;
   text-decoration: none;
-  transition: color 0.3s ease, fill 0.3s ease;
+}
+
+/* ==== DARK THEME ==== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #070709;
+    --text-color: #d5d6d9;
+    --a-color: #7ab7ff;
+    --a-hv-color: #c7dcff;
+    --nav-bg-color: #070709;
+    --nav-text-color: #d5d6d9;
+    --nav-hv-color: #7ab7ff;
+    --code-bg-color: #1e222a;
+  }
 }

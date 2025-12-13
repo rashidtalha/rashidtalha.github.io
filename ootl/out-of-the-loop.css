@@ -1,3 +1,21 @@
+/* OVERRIDE DARK THEME  */
+:root {
+  --bg-color: #f2f3f4;
+  --text-color: #222528;
+
+  --a-color: #0064a7;
+  --a-hv-color: #0d1321;
+
+  --nav-bg-color: #0d1321;
+  --nav-text-color: #f2f3f4;
+  --nav-hv-color: #74c7ff;
+
+  --code-bg-color: #dbdbdb;
+}
+
+
+
+/* Specific styles  */
 main { max-width: 600px; }
 p {margin-bottom: 0;}
 .vspace {display: block; margin-bottom: 10px}
