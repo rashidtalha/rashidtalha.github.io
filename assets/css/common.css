@@ -13,6 +13,22 @@
   --code-bg-color: #dbdbdb;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #080808;
+    --text-color: #d2d2d2;
+    
+    --a-color: #7ab7ff;
+    --a-hv-color: #c7dcff;
+    
+    --nav-bg-color: #080808;
+    --nav-text-color: #d2d2d2;
+    --nav-hv-color: #7ab7ff;
+    
+    --code-bg-color: #1e222a;
+  }
+}
+
 /* ==== GLOBAL STYLES ==== */
 html {
   font-family: 'Roboto', sans-serif;
@@ -132,18 +148,4 @@ nav {
   color: var(--nav-hv-color);
   fill: currentColor;
   text-decoration: none;
-}
-
-/* ==== DARK THEME ==== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #070709;
-    --text-color: #d5d6d9;
-    --a-color: #7ab7ff;
-    --a-hv-color: #c7dcff;
-    --nav-bg-color: #070709;
-    --nav-text-color: #d5d6d9;
-    --nav-hv-color: #7ab7ff;
-    --code-bg-color: #1e222a;
-  }
 }
