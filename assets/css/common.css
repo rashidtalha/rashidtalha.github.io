@@ -38,6 +38,12 @@ html {
   font-size: 11px;
 }
 
+@media (max-width: 500px) {
+  html {
+    font-size: 9px;
+  }
+}
+
 /* ==== LAYOUT RELATED ==== */
 body {
   display: flex;
