@@ -2,73 +2,57 @@
 
 /* EB Garamond (Google, March 2026) */
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-Light.woff') format('woff'),
-      url('../fonts/EBGaramond-Light.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-LightItalic.woff') format('woff'),
-      url('../fonts/EBGaramond-LightItalic.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-Regular.woff') format('woff'),
-      url('../fonts/EBGaramond-Regular.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-Italic.woff') format('woff'),
-      url('../fonts/EBGaramond-Italic.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-Italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-Medium.woff') format('woff'),
-      url('../fonts/EBGaramond-Medium.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-MediumItalic.woff') format('woff'),
-      url('../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-MediumItalic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-Bold.woff') format('woff'),
-      url('../fonts/EBGaramond-Bold.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
-  /*font-display: swap;*/
 }
 
 @font-face {
-  font-family: 'EB Garamanod';
-  src: url('../fonts/EBGaramond-BoldItalic.woff') format('woff'),
-      url('../fonts/EBGaramond-BoldItalic.ttf') format('truetype');
+  font-family: 'EB Garamond';
+  src: url('../fonts/EBGaramond-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
-  /*font-display: swap;*/
 }

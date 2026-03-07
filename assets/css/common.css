@@ -33,15 +33,13 @@
 }
 
 html {
-  font-family: "EB Garamond",serif;
+  font-family: "EB Garamond", Georgia, serif;
   font-kerning: normal;
   font-size: 11px;
 }
 
 @media (max-width: 500px) {
-  html {
-    font-size: 9px;
-  }
+  html { font-size: 9px; }
 }
 
 /* ==== LAYOUT RELATED ==== */
