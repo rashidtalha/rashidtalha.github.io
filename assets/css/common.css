@@ -1,151 +1,137 @@
 /* ==== GLOBAL VARIABLES ==== */
 :root {
-  --bg-color: #f2f3f4;
-  --text-color: #222528;
+  --bg1: #1b1b1b;
+  --bg2: #1e222a;
+  --fg1: #dfdfdf;
+  --fg2: #aaaaaa;
+  --accent1: #7ab7ff;
+  --accent2: #d2d2d2;
 
-  --a-color: #0064a7;
-  --a-hv-color: #0d1321;
-
-  --nav-bg-color: #0d1321;
-  --nav-text-color: #f2f3f4;
-  --nav-hv-color: #74c7ff;
-
-  --code-bg-color: #dbdbdb;
+  --fs-huge: 3.33rem;
+  --fs-large: 2.53rem;
+  --fs-primary: 2.3rem;
+  --fs-small: 2.1rem;
+  --fs-tiny: 1.8rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #080808;
-    --text-color: #d2d2d2;
-    
-    --a-color: #7ab7ff;
-    --a-hv-color: #c7dcff;
-    
-    --nav-bg-color: #080808;
-    --nav-text-color: #d2d2d2;
-    --nav-hv-color: #7ab7ff;
-    
-    --code-bg-color: #1e222a;
+    --bg1: #f1f1f1;
+    --bg2: #dbdbdb;
+    --fg1: #141414;
+    --fg2: #363636;
+    --accent1: #0064a7;
+    --accent2: #0d1321;
   }
+}*/
+
+/* ==== SOME NORMALISATION ==== */
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ==== GLOBAL STYLES ==== */
 html {
-  font-family: 'Roboto', sans-serif;
-  color: var(--text-color);
-  line-height: 1.5;
-  font-size: 18px;
-}
-
-body {
-  background-color: var(--bg-color);
-}
-
-/* ==== TYPOGRAPHY ==== */
-h1, h2, h3, h4{
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-style: normal;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 400; /* normal */
-}
-
-h4 {
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-
-p {
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-
-a {
-  color: var(--a-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--a-hv-color);
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-}
-
-a:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
-code {
-  font-family: Consolas, 'Courier New', monospace;
-  background-color: var(--code-bg-color);
-  padding: 0.15em 0.3em;
-  font-size: 0.95em;
+  font-family: "EB Garamond",serif;
+  font-kerning: normal;
+  font-size: 11px;
 }
 
 /* ==== LAYOUT RELATED ==== */
-main {
-  padding-top: 40px;
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 1250px;
+
   margin: 0 auto;
-  max-width: 1300px;
+  padding: 0 3.6rem;
+
+  color: var(--fg1);
+  background-color: var(--bg1);
+
+  line-height: 1.35;
+  font-size: var(--fs-primary);
 }
 
-footer {
-  padding-top: 40px;
-  padding-bottom: 20px;
-  font-size: 0.8rem;
-  text-align: center;
+header, main, footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
+
+header {
+  flex-direction: row;
+  margin-top: 2.4rem;
+  margin-bottom: 1.4rem;
+  font-size: var(--fs-small);
+}
+
+footer { color: var(--fg2); }
 
 /* ==== NAVIGATION BAR ==== */
 nav {
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
   align-items: center;
   justify-content: flex-end;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: hidden;
-  column-gap: 20px;
+  column-gap: 1.5rem;
 }
 
-.navbar-container {
-  background-color: var(--nav-bg-color);
-  font-size: 0.95rem;
+nav a { font-weight: 500; }
+
+/* ==== TYPOGRAPHY ==== */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
 }
 
-.navbar-item {
-  display: block;
-  color: var(--nav-text-color);
+h1 {
+  font-size: var(--fs-huge);
+  font-weight: normal;
+}
+
+h2 { font-size: var(--fs-large); }
+
+h3 { font-size: var(--fs-primary); }
+
+p { margin-bottom: 1.3rem; }
+
+a {
+  color: var(--accent1);
   text-decoration: none;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  transition: color 0.3s ease, fill 0.3s ease;
 }
 
-.navbar-item:hover {
-  color: var(--nav-hv-color);
-  fill: currentColor;
-  text-decoration: none;
+a:hover {
+  color: var(--accent2);
+  text-decoration: underline solid currentColor;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+/* ==== IMAGE, CAPTION, CODE & RULE ==== */
+code {
+  font-family: Consolas, 'Courier New', monospace;
+  background-color: var(--bg2);
+  padding: 0.75rem 0.95rem;
+  font-size: var(--fs-tiny);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--fg2);
+  height: 0;
+  margin: 0 0 2.4rem 0;
+  width: 300px;
 }

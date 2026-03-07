@@ -1,0 +1,32 @@
+/* ==== SPECIFIC STYLESHEET FOR INDEX.HTML ==== */
+.secondary { text-align: center; }
+
+.secondary img {
+  display: block;
+  width: 330px;
+  max-width: 90vw;
+  margin: 0 auto;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.secondary a { text-decoration: none; }
+
+.secondary p { font-size: var(--fs-small); }
+
+.secondary svg {
+  fill: currentColor;
+  width: 30px;
+  margin-right: 3px;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  main { flex-direction: row-reverse; }
+  .primary { padding-right: 2.7rem; }
+  .secondary img { width: 280px; }
+}
+
+@media screen and (min-width: 1100px) {
+  .secondary img { width: 330px; }
+}
