@@ -3,7 +3,7 @@
 
 .secondary img {
   display: block;
-  width: 300px;
+  width: 290px;
   max-width: 90vw;
   margin: 0 auto;
   margin-top: 2.4rem;
@@ -24,9 +24,9 @@
 @media screen and (min-width: 800px) {
   main { flex-direction: row-reverse; }
   .primary { padding-right: 2.7rem; }
-  .secondary img { width: 280px; }
+  .secondary img { width: 270px; }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1050px) {
   .secondary img { width: 330px; }
 }

@@ -35,18 +35,14 @@
 html {
   font-family: "EB Garamond", Georgia, serif;
   font-kerning: normal;
-  font-size: 11px;
-}
-
-@media (max-width: 500px) {
-  html { font-size: 9px; }
+  font-size: 10px;
 }
 
 /* ==== LAYOUT RELATED ==== */
 body {
   display: flex;
   flex-direction: column;
-  max-width: 1250px;
+  max-width: 1200px;
 
   margin: 0 auto;
   padding: 0 3.6rem;
@@ -84,7 +80,7 @@ nav {
   column-gap: 1.5rem;
 }
 
-nav a { font-weight: 500; }
+nav a { font-weight: bold; }
 
 /* ==== TYPOGRAPHY ==== */
 h1, h2, h3, h4, h5, h6 {
@@ -92,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: bold;
   margin-top: 2.4rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
 }
 
 h1 {
@@ -109,6 +105,7 @@ p { margin-bottom: 1.3rem; }
 a {
   color: var(--accent1);
   text-decoration: none;
+  display: inline;
 }
 
 a:hover {
@@ -121,6 +118,21 @@ a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 1px;
 }
+
+/* ==== ARTICLE, GENERAL PAGE ELEMENTS ==== */
+
+article { margin-bottom: 1.8rem; }
+
+article .detail .date { color: var(--fg2); }
+
+article .detail h2 {
+  display: inline;
+  font-size: var(--fs-primary);
+  margin-right: 0.5rem;
+}
+
+article .detail p { display: inline; }
+article .detail a { font-weight:bold }
 
 /* ==== IMAGE, CAPTION, CODE & RULE ==== */
 code {
