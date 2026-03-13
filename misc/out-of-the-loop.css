@@ -1,72 +1,61 @@
-/* OVERRIDE DARK THEME  */
-:root {
-  --bg-color: #f2f3f4;
-  --text-color: #222528;
+/* Specific styles  */
+ul {list-style-position: inside; padding-left: 0.5rem}
 
-  --a-color: #0064a7;
-  --a-hv-color: #0d1321;
-
-  --nav-bg-color: #0d1321;
-  --nav-text-color: #f2f3f4;
-  --nav-hv-color: #74c7ff;
-
-  --code-bg-color: #dbdbdb;
+.game-block {
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  background: #cccccc;
+  border-radius: 8px;
+  color: #222222;
+  font-size: var(--fs-small);
 }
 
-
-
-/* Specific styles  */
-main { max-width: 600px; }
-p {margin-bottom: 0;}
-.vspace {display: block; margin-bottom: 10px}
-
-.frow { flex-direction: column; }
-.form-group { margin-bottom: 20px; }
-
-.inner, form {
-  margin: 20px auto;
-  margin-bottom: 0px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+.game-heading {
+  display: block;
+  margin-bottom: 20px;
+  font-size: var(--fs-large);
 }
 
 label {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
+  font-weight: 500;
   margin-bottom: 6px;
 }
 
 input, select {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
+  font-size: inherit;
+  font-family: inherit;
+  border: 2px solid var(--fg2);
   border-radius: 6px;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background: #fff;
+  transition: border-color 0.3s ease;
+  background: #dddddd;
+  margin-bottom: 20px;
 }
 
 input:focus, select:focus {
-  border-color: #6200ea;
-  box-shadow: 0px 2px 6px rgba(98, 0, 234, 0.3);
+  border-color: var(--bg1);
 }
 
 button {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: inherit;
+  font-family: inherit;
   font-weight: bold;
-  color: #fff;
-  background: #1e4d2b;
+  color: var(--fg1);
+  background: var(--bg1);
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-button:hover { background: #006b3c; }
-button:disabled { background: #ccc; color: #777; }
+button.gen { margin-bottom: 10px; }
+
+button:hover { background: var(--bg2); }
+button:disabled { background: #aaaaaa; color: #333333; }

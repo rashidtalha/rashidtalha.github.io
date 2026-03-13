@@ -13,88 +13,70 @@
     gtag('config', 'G-3RH0D6HGVT');
   </script>
   
-  <title>Rashid Talha | Out of the Loop Game</title>
+  <title>OOTL (Game) | Rashid Talha</title>
   <meta name="author" content="Rashid Talha">
-  <meta name="description" content="Out of the loop game written in javascript">
+  <meta name="description" content="A personal implementation of the 'Out of the Loop' game for my friends. Simple, open-source, customizable, and fun.">
 
   <link rel="icon" href="../assets/img/favicon.ico">
 
-  <link rel="stylesheet" href="../assets/css/gridspec.css">
   <link rel="stylesheet" href="../assets/css/fontspec.css">
   <link rel="stylesheet" href="../assets/css/common.css">
-  
-  <link rel="stylesheet" type="text/css" href="out-of-the-loop.css">
+  <link rel="stylesheet" href="out-of-the-loop.css">
 </head>
 <body>
 
-<div class="container navbar-container">
+<header>
   <nav>
-    <a href="https://rashidtalha.github.io" title="Rashid Talha" class="navbar-item">Home</a>
-    <a href="https://rashidtalha.github.io/research" title="Research" class="navbar-item">Research</a>
-    <a href="https://rashidtalha.github.io/notes" title="Notes" class="navbar-item">Notes</a>
-    <a href="https://rashidtalha.github.io/ootl" title="Out of the Loop" class="navbar-item">OOTL</a>
+    <a href="https://rashidtalha.github.io" title="Rashid Talha">Home</a>
+    <a href="https://rashidtalha.github.io/research" title="Research & Notes">Research & Notes</a>
+    <a href="https://rashidtalha.github.io/misc" title="Misc">Misc</a>
   </nav>
-</div>
+</header>
 
-<div class="container">
+<main>
 
-  <main>
-  <div class="frow">
-    <div class="fcell">
-      <h1>Out of the Loop</h1>
-      <p>Each round, all players receive a secret word, except the imposter, who gets a different word (but from the same category). Players take turns asking and answering questions to figure out who is out of the loop. Once the group votes on the imposter, the imposter gets one last chance to turn the tables by guessing the correct word.</p>
+  <h1>Out of the Loop</h1>
+  <p>
+    This is a social deduction game where each person is given a secret word. One person is the imposter. They are given a different word (but from the same category). Everyone else gets the same word. Players then take turns asking questions to see who is acting suspicious. The goal is to catch the imposter by voting. If the imposter is caught, they get one last chance to win if they can figure out the word that the rest of the group was given.
+  </p>
+
+  <p>
+    Feel free to modify these rules, or add your own. For example you can limit the number of questions or the type of questions that can be asked before the voting begins.
+  </p>
+
+  <div class="game-block">
+    <form id="stage-1">
+      <span class="game-heading">Setup.</span>
+
+      <label for="fname">Names:</label>
+      <input type="text" id="fname" name="fname" placeholder="Person 1, Person 2, Person 3" required>
+
+      <label for="fcat">Select a category:</label>
+      <select id="fcat" name="fcat" required></select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="game-block">
+    <span class="game-heading">View.</span>
+
+    <div id="viewing">
+      Complete the setup first ...
     </div>
   </div>
 
-  <div class="frow">
-    <div class="fcell">
+  <div class="game-block">
+    <span class="game-heading">Guess.</span>
 
-      <form id="stage-1">
-        <div class="form-group">
-          <h4>Setup.</h4>
-        </div>
-
-        <div class="form-group">
-            <label for="fname">Names:</label>
-            <input type="text" id="fname" name="fname" placeholder="Person 1, Person 2, Person 3" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="fcat">Select a category:</label>
-            <select id="fcat" name="fcat" required></select>
-        </div>
-        
-        <button type="submit">Submit</button>
-      </form>
-
+    <div id="guessing">
+      Complete the setup first ...
     </div>
-
-    <div class="fcell">
-      <div class="inner">
-        <h4>View.</h4>
-        <div id="viewing">
-          Complete the setup first ...
-        </div>
-      </div>
-    </div>
-
-    <div class="fcell">
-      <div class="inner">
-        <h4>Guess.</h4>
-        <div id="guessing">
-          Complete the setup first ...
-        </div>
-      </div>
-    </div>
-
   </div>
-  </main>
 
-</div>
+</main>
 
 <script defer src="out-of-the-loop.js" type="text/javascript"></script>
 
 </body>
 </html>
-
-

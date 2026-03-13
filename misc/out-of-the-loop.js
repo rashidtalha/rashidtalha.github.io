@@ -51,12 +51,11 @@ function shuffleArray(array) {
 }
 
 function genViewing() {
-    msg = "<span class='vspace'></span>";
+    msg = "";
     for (i in names_orig) {
         cls = '"btn' + i + '"'
         if (names_orig[i] == imposter) { mark = false } else { mark = true };
-        msg = msg + "<button id='btn" + i + "' onclick='showHide("+mark+","+ cls +")'>" + names_orig[i] +" (Click to Show)</button>";
-        msg += "<span class='vspace'></span>"
+        msg = msg + "<button class='gen' id='btn" + i + "' onclick='showHide("+mark+","+ cls +")'>" + names_orig[i] +" (Click to Show)</button>";
     }
     msg += "<br><br><button id='truthbox' onclick='revealTruth()'>Who was out of the loop?</button>"
     document.getElementById("viewing").innerHTML = msg;
