@@ -14,17 +14,6 @@
   --fs-tiny: 1.8rem;
 }
 
-/*@media (prefers-color-scheme: light) {
-  :root {
-    --bg1: #f1f1f1;
-    --bg2: #dbdbdb;
-    --fg1: #141414;
-    --fg2: #363636;
-    --accent1: #0064a7;
-    --accent2: #0d1321;
-  }
-}*/
-
 /* ==== SOME NORMALISATION ==== */
 *, *::before, *::after{
   box-sizing: border-box;
@@ -35,21 +24,18 @@
 html {
   font-family: "EB Garamond", Georgia, serif;
   font-kerning: normal;
-  font-size: 10px;
+  font-size: 9.3px;
 }
 
 /* ==== LAYOUT RELATED ==== */
 body {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 3.6rem;
-
   color: var(--fg1);
   background-color: var(--bg1);
-
   line-height: 1.35;
   font-size: var(--fs-primary);
 }
@@ -91,21 +77,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.3rem;
 }
 
-h1 {
-  font-size: var(--fs-huge);
-  font-weight: normal;
-}
-
+h1 { font-size: var(--fs-huge); font-weight: normal; }
 h2 { font-size: var(--fs-large); }
-
 h3 { font-size: var(--fs-primary); }
-
 p { margin-bottom: 1.3rem; }
 
 a {
   color: var(--accent1);
   text-decoration: none;
-  display: inline;
 }
 
 a:hover {
@@ -122,17 +101,14 @@ a:focus-visible {
 /* ==== ARTICLE, GENERAL PAGE ELEMENTS ==== */
 
 article { margin-bottom: 1.8rem; }
-
 article .detail .date { color: var(--fg2); }
-
 article .detail h2 {
   display: inline;
   font-size: var(--fs-primary);
   margin-right: 0.5rem;
 }
-
 article .detail p { display: inline; }
-article .detail a { font-weight:bold }
+article .detail a { font-weight: bold; }
 
 /* ==== IMAGE, CAPTION, CODE & RULE ==== */
 code {

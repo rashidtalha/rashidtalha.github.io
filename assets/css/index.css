@@ -1,5 +1,7 @@
 /* ==== SPECIFIC STYLESHEET FOR INDEX.HTML ==== */
 .secondary { text-align: center; }
+.secondary a { text-decoration: none; }
+.secondary p { font-size: var(--fs-small); }
 
 .secondary img {
   display: block;
@@ -10,10 +12,6 @@
   margin-bottom: 2.4rem;
 }
 
-.secondary a { text-decoration: none; }
-
-.secondary p { font-size: var(--fs-small); }
-
 .secondary svg {
   fill: currentColor;
   width: 30px;
@@ -21,12 +19,8 @@
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 820px) {
   main { flex-direction: row-reverse; }
-  .primary { padding-right: 2.7rem; }
+  .primary { padding-right: 3rem; }
   .secondary img { width: 270px; }
-}
-
-@media screen and (min-width: 1050px) {
-  .secondary img { width: 330px; }
 }
