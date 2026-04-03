@@ -89,7 +89,7 @@ a {
 
 a:hover {
   color: var(--accent2);
-  text-decoration: underline solid currentColor;
+  text-decoration: underline 1.5pt solid currentColor;
   text-underline-offset: 0.2em;
 }
 
@@ -99,16 +99,15 @@ a:focus-visible {
 }
 
 /* ==== ARTICLE, GENERAL PAGE ELEMENTS ==== */
+article { margin-bottom: 2.2rem; font-size: var(--fs-large); }
 
-article { margin-bottom: 1.8rem; }
-article .detail .date { color: var(--fg2); }
-article .detail h2 {
-  display: inline;
-  font-size: var(--fs-primary);
-  margin-right: 0.5rem;
-}
-article .detail p { display: inline; }
-article .detail a { font-weight: bold; }
+.date { color: var(--fg2); margin-bottom: 1.2rem; }
+
+.detail { margin-bottom: 2.4rem; }
+.detail h2 { display: inline; font-size: var(--fs-primary); margin-right: 0.5rem; }
+.detail .date { margin-bottom: 0; }
+.detail p { display: inline; }
+.detail a { font-weight: bold; }
 
 /* ==== IMAGE, CAPTION, CODE & RULE ==== */
 code {
@@ -126,4 +125,30 @@ hr {
   height: 0;
   margin: 0 0 2.4rem 0;
   width: 300px;
+}
+
+/* ==== PRINTING ==== */
+
+@media print {
+  :root {
+    --bg1: #ffffff;
+    --bg2: #b3b3b3;
+    --fg1: #212121;
+    --fg2: #767676;
+    /*--accent1: #7ab7ff;*/
+    /*--accent2: #d2d2d2;*/
+  }
+
+  @page {
+    size: A4 portrait;
+    margin-top: 16mm;
+    margin-bottom: 16mm;
+    margin-left: 20mm;
+    margin-right: 20mm;
+  }
+
+  html { font-size: 8px; }
+  article a::after { content: " [" attr(href) "]"; }
+  header { display: none; }
+  article { font-size: var(--fs-small); text-align: justify; }
 }
