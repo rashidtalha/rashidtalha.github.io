@@ -24,7 +24,7 @@
 html {
   font-family: "EB Garamond", Georgia, serif;
   font-kerning: normal;
-  font-size: 8.8px;
+  font-size: 8.6px;
 }
 
 @media screen and (min-width: 576px) {
@@ -109,7 +109,7 @@ article { margin-bottom: 2.2rem; font-size: var(--fs-large); }
 
 .detail { margin-bottom: 2.4rem; }
 .detail h2 { display: inline; font-size: var(--fs-primary); margin-right: 0.5rem; }
-.detail .date { margin-bottom: 0; }
+.detail .date { margin-bottom: 0.6rem; }
 .detail p { display: inline; }
 .detail a { font-weight: bold; }
 
