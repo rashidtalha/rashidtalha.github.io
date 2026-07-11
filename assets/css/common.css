@@ -24,7 +24,7 @@
 html {
   font-family: "EB Garamond", Georgia, serif;
   font-kerning: normal;
-  font-size: 8.6px;
+  font-size: 8.4px;
 }
 
 @media screen and (min-width: 576px) {
@@ -102,6 +102,24 @@ a:focus-visible {
   outline-offset: 1px;
 }
 
+/* special unordered list
+.interests {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.interests > li {
+  position: relative;
+  margin: 0.25em 0;
+}
+
+.interests > li::before {
+  content: "–";
+  position: absolute;
+  left: -1em;
+}*/
+
 /* ==== ARTICLE, GENERAL PAGE ELEMENTS ==== */
 article { margin-bottom: 2.2rem; font-size: var(--fs-large); }
 
@@ -109,7 +127,7 @@ article { margin-bottom: 2.2rem; font-size: var(--fs-large); }
 
 .detail { margin-bottom: 2.4rem; }
 .detail h2 { display: inline; font-size: var(--fs-primary); margin-right: 0.5rem; }
-.detail .date { margin-bottom: 0.6rem; }
+.detail .date { margin-bottom: 0.7rem; }
 .detail p { display: inline; }
 .detail a { font-weight: bold; }
 
@@ -131,6 +149,34 @@ hr {
   width: 300px;
 }
 
+figure { margin-bottom: 1.3rem; }
+
+figure img {
+  display: block;
+  margin: auto;
+  height: auto;
+  padding: 1rem 0;
+  max-width: 100%;
+  filter: brightness(0.9);
+}
+
+figcaption {
+  text-align: center;
+  font-size: var(--fs-small);
+  padding: 0 1rem;
+}
+
+figure.wide > img{ width: 100% }
+figure.mid > img{ width: 100% }
+figure.small > img{ width: 100% }
+figure > div.many { display: flex; gap: 1px; margin: 0 auto; }
+figure > div.many img{ flex: 1; min-width: 0; }
+
+@media screen and (min-width: 576px) {
+  figure.wide > img, figure.wide > div.many{ width: 100% }
+  figure.mid > img, figure.mid > div.many{ width: 70% }
+  figure.small > img, figure.small > div.many{ width: 45% }
+}
 /* ==== PRINTING ==== */
 
 @media print {
