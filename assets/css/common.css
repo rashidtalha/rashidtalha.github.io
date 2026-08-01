@@ -22,13 +22,18 @@
 }
 
 html {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: "EB Garamond", serif;
   font-kerning: normal;
   font-size: 8.4px;
 }
 
 @media screen and (min-width: 576px) {
   html { font-size: 9.3px; }
+}
+
+::selection {
+  color: var(--bg1);
+  background-color: var(--fg1);
 }
 
 /* ==== LAYOUT RELATED ==== */
