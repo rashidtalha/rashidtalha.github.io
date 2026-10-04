@@ -7,10 +7,7 @@
     }
   } catch (e) {}
 
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('#theme-toggle')) return;
-    e.preventDefault();
-
+  function toggleTheme() {
     var light = root.dataset.theme !== 'light';
 
     if (light) {
@@ -26,6 +23,25 @@
         localStorage.removeItem(key);
       }
     } catch (e) {}
+  }
 
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('#theme-toggle')) return;
+    e.preventDefault();
+    toggleTheme();
   });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key.toLowerCase() === 'd') {
+      toggleTheme();
+    }
+  });
+
+})();
+
+(function () {
+
+  
+
+  
 })();
