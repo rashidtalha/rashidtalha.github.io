@@ -22,9 +22,7 @@
       display: block;
       width: 290px;
       max-width: 90vw;
-      margin: 0 auto;
-      margin-top: 2.4rem;
-      margin-bottom: 2.4rem;
+      margin: 1.12rem auto;
     }
 
     @media screen and (min-width: 820px) {
@@ -32,6 +30,14 @@
       .primary { padding-right: 3rem; }
       .secondary { order: 2; }
       .secondary img { width: 310px; }
+    }
+
+    @media print {
+      main { flex-direction: row; }
+      .primary { padding-right: 3rem; }
+      .secondary { order: 2; }
+      .secondary img { width: 140px; }
+      .secondary svg { display: none; }
     }
   </style>
 </head>
