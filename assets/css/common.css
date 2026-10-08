@@ -6,11 +6,10 @@
   --fg: #d8d8d8;
 
   --surface: #22252b;
-  --muted: #a0a0a0;
-  --accent: #7ab7ff;
-  --accent-hover: #7ab7ff;
+  --muted: #8f8f8f;
+  --accent: #5ea1f0;
 
-  --image-filter: brightness(0.9);
+  --image-filter: brightness(0.8);
   --theme-toggle-hover: #f0c040;
 
   --fs-huge: 1.72rem;
@@ -23,16 +22,15 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: #f7f7f5;
+  --bg: #efefea;
   --fg: #292929;
 
   --surface: #e9e9e7;
   --muted: #686868;
-  --accent: #1a5fb4;
-  --accent-hover: #124a8f;
+  --accent: #b44446;
 
   --image-filter: none;
-  --theme-toggle-hover: #333333;
+  --theme-toggle-hover: #22252b;
 }
 
 /* ==== EXTERNAL FONTS ==== */
@@ -40,7 +38,7 @@
 /* EB Garamond (Google, March 2026) */
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -48,7 +46,7 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-Italic.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -56,7 +54,7 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-Medium.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -64,7 +62,7 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-MediumItalic.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-MediumItalic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -72,7 +70,7 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-SemiBold.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -80,7 +78,7 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2');
+  src: url('/assets/fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -118,7 +116,7 @@ body {
 
 body::selection {
   color: var(--bg);
-  background-color: var(--muted);
+  background-color: var(--fg);
 }
 
 header, main, footer {
@@ -171,7 +169,8 @@ a:focus-visible {
 }
 
 a svg { fill: currentColor; }
-a svg:hover { text-decoration: none; }
+
+sup, sub { line-height: 0; }
 
 
 /* ==== NAVIGATION BAR ==== */
@@ -184,26 +183,25 @@ nav {
   column-gap: 15px;
 }
 
-nav a { font-weight: bold; text-decoration: none; }
-#theme-toggle svg { vertical-align: middle; width: 28px; }
+nav a { color: var(--accent); font-weight: bold; text-decoration: none; }
+#theme-toggle svg { vertical-align: text-bottom; width: 24px; }
 #theme-toggle svg:hover { fill: var(--theme-toggle-hover); }
 nav a[aria-current="page"] { color: var(--muted); }
 
 /* ==== ARTICLE, SECTION, GENERAL PAGE ELEMENTS ==== */
-article { margin: 1rem auto; max-width: 850px; }
-
 time {
   display: block;
-  margin: 0.6rem auto;
+  margin: 0.5rem auto;
   color: var(--muted);
   font-size: var(--fs-primary);
 }
 
-section { margin: 1rem auto; }
+article { width: 100%; max-width: 850px; margin: 1rem auto; }
+
+section { margin: 1rem 0 0.5rem 0; }
 section time { margin-top: 0; margin-bottom: 0.4rem; }
 section h2 { margin-top: 0; }
 
-.card p { display: inline; font-size: var(--fs-primary); }
 .card h2 {
   display: inline;
   margin-right: 0.5rem;
@@ -211,6 +209,7 @@ section h2 { margin-top: 0; }
   font-weight: 500;
   font-style: normal;
 }
+
 
 /* ==== IMAGE, CAPTION, CODE & RULE ==== */
 hr {
@@ -262,6 +261,7 @@ ul, ol { padding-left: 1.6em; margin-bottom: 0.6rem; }
     --accent: #1a5fb4;
     --image-filter: none;
   }
+  body { padding: 0; max-width: none; }
 
   @page {
     size: A4 portrait;
@@ -274,7 +274,7 @@ ul, ol { padding-left: 1.6em; margin-bottom: 0.6rem; }
   html { font-size: 15px; }
   article a::after { content: " [" attr(href) "]"; }
   header { display: none; }
-  article { font-size: var(--fs-small); text-align: justify; }
+  article { font-size: var(--fs-small); text-align: justify; hyphens: auto; }
 
   figure.wide > img, figure.wide > div.many{ width: 100% }
   figure.mid > img, figure.mid > div.many{ width: 70% }
