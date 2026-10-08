@@ -6,7 +6,7 @@
   padding: 20px;
   background: #cccccc;
   border-radius: 8px;
-  color: var(--bg1);
+  color: var(--bg);
   font-size: var(--fs-small);
 }
 
@@ -27,15 +27,16 @@
   padding: 10px;
   font-size: inherit;
   font-family: inherit;
-  border: 2px solid var(--fg2);
+  border: 2px solid var(--muted);
   border-radius: 6px;
   outline: none;
   transition: border-color 0.3s ease;
-  background: var(--fg1);
+  background: var(--fg);
   margin-bottom: 20px;
+  color: var(--surface);
 }
 
-.game-block input:focus, select:focus { border-color: var(--bg1); }
+.game-block input:focus, select:focus { border-color: var(--bg); }
 
 .game-block button {
   width: 100%;
@@ -43,14 +44,14 @@
   font-size: inherit;
   font-family: inherit;
   font-weight: bold;
-  color: var(--fg1);
-  background: var(--bg1);
+  color: var(--fg);
+  background: var(--bg);
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.game-block button:hover { background: var(--bg2); }
+.game-block button:hover { background: var(--surface); }
 .game-block button:disabled { background: #aaaaaa; color: #333333; }
 
 .game-block button.gen { margin-bottom: 10px; }
