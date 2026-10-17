@@ -1,2 +1,2 @@
 # Specify filepatterns you want git to ignore.
-off_*
+test/*
